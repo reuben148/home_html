@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Css</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #3a0ca3;
+            --secondary-color: #4361ee;
+            --accent-color: #4cc9f0;
+            --text-color: #f1faee;
+            --bg-color: #000814;
+            --card-bg: rgba(255, 255, 255, 0.1);
+        }
+
+        @layer utilities {
+            .animation-delay-0 {
+                animation-delay: 0s;
+            }
+            .animation-delay-4000 {
+                animation-delay: 4s;
+            }
+            .animation-delay-8000 {
+                animation-delay: 8s;
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ["Inter", "serif"],
+                    },
+                    colors: {
+                        containerColor: 'var(--card-bg)',
+                        sideColor: 'rgba(58, 12, 163, 0.2)',
+                        siderLink: 'rgba(255, 255, 255, 0.1)',
+                        textColor: 'var(--text-color)',
+                        bgColor: 'var(--bg-color)',
+                        accentColor: 'var(--accent-color)',
+                        primaryColor: 'var(--primary-color)',
+                        secondaryColor: 'var(--secondary-color)',
+                        searchBg: 'rgba(255, 255, 255, 0.1)',
+                        agencyColor: 'rgba(67, 97, 238, 0.3)',
+                        PlaceholderColor: 'rgba(241, 250, 238, 0.2)',
+
+                    },
+                    boxShadow: {
+                        searchShadow: '0 0 10px rgba(76, 201, 240, 0.3)',
+                    },
+                    animation: {
+                        'slide': 'slide 12s linear infinite',
+                    },
+                    keyframes: {
+                        slide: {
+                            '0%, 20%': {
+                                opacity: '1',
+                            },
+                            '25%, 80%': {
+                                opacity: '0',
+                            },
+                            '85%, 100%': {
+                                opacity: '1',
+                            }
+                        },
+                    }
+                },
+
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-[url('https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=600')]
+bg-center
+bg-cover
+w-full
+min-h-screen
+bg-fixed
+bg-no-repeat
+bg-bgColor
+text-textColor
+p-[20px]
+font-inter
+">
+    <div
+        class=" flex flex-col md:flex-row max-w-[1200px] w-full  mx-auto  rounded-[20px] overflow-hidden backdrop-blur-[20px] bg-containerColor">
+        <div class="text-[#fff] bg-sideColor p-[20px] backdrop-blur-[10px] w-[250px] hidden md:block ">
+            <ul class="flex flex-col gap-[0.4rem] list-none  ">
+                <li>
+                    <a class=" text-xl transition-all ease duration-[0.3s]  p-[10px] hover:bg-siderLink block rounded-xl hover:translate-x-[5px] text-[textColor]"
+                        href="#"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li>
+                    <a class=" text-xl transition-all ease duration-[0.3s]  p-[10px] hover:bg-siderLink block rounded-xl hover:translate-x-[5px] text-[textColor]"
+                        href="#"><i class="fas fa-plane"></i> Destinations</a>
+                </li>
+                <li>
+                    <a class=" text-xl transition-all ease duration-[0.3s]  p-[10px] hover:bg-siderLink block rounded-xl hover:translate-x-[5px] text-[textColor]"
+                        href="#"><i class="fas fa-calendar-alt"></i> Packages</a>
+                </li>
+                <li>
+                    <a class=" text-xl transition-all ease duration-[0.3s]  p-[10px] hover:bg-siderLink block rounded-xl hover:translate-x-[5px] text-[textColor]"
+                        href="#"><i class="fas fa-info-circle"></i> About Us</a>
+                </li>
+                <li>
+                    <a class=" text-xl transition-all ease duration-[0.3s]  p-[10px] hover:bg-siderLink block rounded-xl hover:translate-x-[5px] text-[textColor]"
+                        href="#"><i class="fas fa-envelope"></i> Contact</a>
+                </li>
+            </ul>
+        </div>
+        <main class="p-[10px] flex-1">
+            <nav class=" flex justify-between items-center py-[20px]">
+                <div class=" font-semibold text-accentColor text-2xl">Wanderlust Adventures</div>
+                <div class=" relative ">
+                    <input type="text"
+                        class="bg-searchBg border-0 rounded-[20px] py-[7px] pl-[8px] w-[200px] text-textColor backdrop-blur-[5px] transition-all ease duration-[0.3s] focus:outline-0 focus:w-[300px] focus:shadow-searchShadow placeholder:text-[14px] placeholder:text-PlaceholderColor"
+                        placeholder="Search destinations..." />
+                    <i class="fas fa-search absolute right-[10px] top-[50%] translate-y-[-50%] text-accentColor"></i>
+                </div>
+            </nav>
+            <div class="relative h-[300px] mb-[20px] rounded-[10px] overflow-hidden">
+                <img class="block animate-slide absolute inset-0 w-full h-full object-cover animation-delay-0"
+                    src="https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Destination 1" />
+
+                <img class="block animate-slide absolute inset-0 w-full h-full object-cover   animation-delay-4000"
+                    src="https://images.pexels.com/photos/2265876/pexels-photo-2265876.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Destination 2" />
+
+                <img class="block animate-slide absolute inset-0 w-full h-full object-cover  animation-delay-8000"
+                    src="https://images.pexels.com/photos/2087391/pexels-photo-2087391.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Destination 3" />
+            </div>
+
+            <div class="bg-agencyColor text-center p-[10px] backdrop-blur-[5px] text-textColor my-[20px] rounded-xl ">
+                <h2 class=" font-semibold text-[25px]">Wanderlust Adventures</h2>
+                <p class="text-[16px]">Explore the world with us!</p>
+            </div>
+            <div class="bg-containerColor backdrop-blur-[5px] rounded-xl p-[20px] mb-[20px]">
+                <h2 class="text-2xl font-semibold">Welcome to Wanderlust Adventures</h2>
+                <p>
+                    Embark on a journey of a lifetime with Wanderlust Adventures. We
+                    specialize in creating unforgettable travel experiences tailored to
+                    your desires.
+                </p>
+                <br>
+                <br>
+                <p>
+                    Our expert team of travel enthusiasts is dedicated to curating the
+                    perfect itinerary for you. Whether you're seeking a relaxing beach
+                    getaway, an adventurous mountain expedition, or a cultural city
+                    tour, we have the perfect package for you.
+                </p>
+                <p>
+                    With Wanderlust Adventures, you'll discover hidden gems, immerse
+                    yourself in local cultures, and create memories that will last a
+                    lifetime. Let us take care of the details while you focus on
+                    enjoying your dream vacation.
+                </p>
+            </div>
+            <div class="flex flex-col gap-[20px]">
+                <div class="bg-containerColor rounded-xl p-[20px] backdrop-blur-[5px]">
+                    <h3 class="text-[20px] font-semibold">Special Offers</h3>
+                    <p>
+                        Check out our latest deals and discounts on popular destinations!
+                    </p>
+                </div>
+                <div class="bg-containerColor rounded-xl p-[20px] backdrop-blur-[5px]">
+                    <h3 class="text-[20px] font-semibold">Travel Tips</h3>
+                    <p>
+                        Get expert advice on packing, local customs, and must-visit
+                        attractions.
+                    </p>
+                </div>
+            </div>
+            <footer class="text-center py-[20px] cursor-pointer">
+                <p>Click here to contact us</p>
+            </footer>
+        </main>
+    </div>
+
+</body>
+
+</html>
